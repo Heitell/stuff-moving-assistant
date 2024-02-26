@@ -1,0 +1,1 @@
+INSERT INTO moving_session (id, owner_id, title, created_at) VALUES (1, 2, 'Precreated', now())

@@ -5,10 +5,12 @@ plugins {
 	id("io.spring.dependency-management") version "1.1.4"
 	kotlin("jvm") version "1.9.20"
 	kotlin("plugin.spring") version "1.9.20"
+	id("io.qameta.allure") version "2.11.2"
 }
 
 group = "ru.svrd"
 version = "0.0.1-SNAPSHOT"
+val allureVersion = "2.24.0"
 
 java {
 	sourceCompatibility = JavaVersion.VERSION_17
@@ -27,6 +29,12 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	runtimeOnly("org.postgresql:postgresql")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+	testImplementation("org.testcontainers:testcontainers:1.19.6")
+	testImplementation("org.testcontainers:postgresql:1.19.6")
+	testImplementation("org.testcontainers:junit-jupiter:1.19.6")
+
+	testImplementation ("io.qameta.allure:allure-junit5:2.24.0")
 }
 
 tasks.withType<KotlinCompile> {
